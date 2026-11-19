@@ -1,5 +1,11 @@
 # @assistant-ui/store
 
+## 0.3.25
+
+### Patch Changes
+
+- [#10696](https://github.com/assistant-ui/assistant-ui/pull/10696) [`c21c46d`](https://github.com/assistant-ui/assistant-ui/commit/c21c46d0cdef039ec1377eefa3f01507df22453c) - Recheck viewport position when the content inset changes. ([@rupic-app](https://github.com/apps/rupic-app))
+
 ## 0.3.24
 
 ### Patch Changes
