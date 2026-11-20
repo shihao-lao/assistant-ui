@@ -1,126 +1,139 @@
 ## aui-perf nightly record
 
-_41 points · 2026-09-03T05:27:14.273Z to 2026-10-13T04:46:08.805Z · latest runner: AMD EPYC · Node v24.21.0_
+_42 points · 2026-09-03T05:27:14.273Z to 2026-11-20T13:01:26.923Z · latest runner: AMD EPYC 9V74 80-Core Processor · Node v26.13.0_
 
 | bench | latest | Δ7d | Δ30d | min | max | points |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| accumulator › assistant-stream: raw controller enqueue overhead › 10,000 chunks from one source stream | 629.89µs | +0.7% | +6.4% | 592.35µs | 700.65µs | 30 |
-| accumulator › assistant-stream: raw controller enqueue overhead › 10,000 controller.enqueue calls | 710.25µs | +1.1% | +5.4% | 665.78µs | 804.46µs | 30 |
-| accumulator › assistant-stream: same 4000-char text, chunk size A/B › 16 deltas × 250 chars | 34.91µs | +2.2% | +4.8% | 32.52µs | 39.98µs | 30 |
-| accumulator › assistant-stream: same 4000-char text, chunk size A/B › 250 deltas × 16 chars | 386.51µs | +1.3% | +3.0% | 359.60µs | 444.94µs | 30 |
-| accumulator › assistant-stream: same 4000-char text, chunk size A/B › 4000 deltas × 1 char (per-token) | 6.060ms | +2.1% | +3.8% | 5.607ms | 6.875ms | 30 |
-| accumulator › assistant-stream: stream + accumulator per-delta cost (16-char deltas) › 100 deltas | 157.82µs | -5.3% | +1.9% | 152.78µs | 185.70µs | 30 |
-| accumulator › assistant-stream: stream + accumulator per-delta cost (16-char deltas) › 1000 deltas | 1.439ms | -5.4% | -1.0% | 1.375ms | 1.707ms | 30 |
-| accumulator › assistant-stream: stream + accumulator per-delta cost (16-char deltas) › 4000 deltas | 5.757ms | -5.5% | -0.4% | 5.570ms | 6.838ms | 30 |
-| accumulator › assistant-stream: stream round trip baseline, no accumulator › 100 deltas | 6.76µs | -0.4% | +3.1% | 6.52µs | 7.88µs | 30 |
-| accumulator › assistant-stream: stream round trip baseline, no accumulator › 1000 deltas | 54.73µs | -1.1% | +3.8% | 52.83µs | 61.40µs | 30 |
-| accumulator › assistant-stream: stream round trip baseline, no accumulator › 4000 deltas | 215.19µs | -1.4% | +3.6% | 201.64µs | 246.32µs | 30 |
-| ai-sdk-toolkit › ai-sdk: convert fresh AISDKToolkit schemas › 10 static tools | 35.37µs | +2.7% |  | 34.14µs | 40.61µs | 8 |
-| ai-sdk-toolkit › ai-sdk: convert fresh AISDKToolkit schemas › 100 static tools | 346.06µs | +5.2% |  | 328.87µs | 398.81µs | 8 |
-| ai-sdk-toolkit › ai-sdk: reuse converted AISDKToolkit schemas › 10 static tools | 4.63µs | +8.4% |  | 4.27µs | 5.09µs | 8 |
-| ai-sdk-toolkit › ai-sdk: reuse converted AISDKToolkit schemas › 100 static tools | 38.64µs | +9.5% |  | 35.19µs | 40.83µs | 8 |
-| data-stream › assistant-stream: data stream decode (16-char deltas) › 100 deltas | 536.61µs | +3.5% | +10.2% ⚠︎ | 491.12µs | 624.45µs | 30 |
-| data-stream › assistant-stream: data stream decode (16-char deltas) › 1000 deltas | 4.803ms | +1.9% | +7.5% | 4.486ms | 5.608ms | 30 |
-| data-stream › assistant-stream: data stream decode (16-char deltas) › 4000 deltas | 19.164ms | +3.0% | +8.0% | 17.736ms | 22.665ms | 30 |
-| data-stream › assistant-stream: data stream encode (16-char deltas) › 100 deltas | 332.64µs | +1.4% | +4.4% | 291.94µs | 389.68µs | 30 |
-| data-stream › assistant-stream: data stream encode (16-char deltas) › 1000 deltas | 3.092ms | +0.6% | +3.5% | 2.715ms | 3.727ms | 30 |
-| data-stream › assistant-stream: data stream encode (16-char deltas) › 4000 deltas | 12.518ms | +1.3% | +3.8% | 10.803ms | 14.951ms | 30 |
-| external-message-conversion › core: external message reasoning continuations › 100 matches | 28.05µs | +13.7% | +17.7% ⚠︎ | 23.95µs | 28.91µs | 30 |
-| external-message-conversion › core: external message reasoning continuations › 1000 matches | 311.00µs | +17.7% | +20.3% ⚠︎ | 249.56µs | 330.30µs | 30 |
-| external-message-conversion › core: external message reasoning continuations › 5000 matches | 1.661ms | +17.3% | +20.0% ⚠︎ | 1.385ms | 1.740ms | 30 |
-| external-message-conversion › core: external message tool results › 100 matches | 33.65µs | +0.7% | +21.7% ⚠︎ | 27.25µs | 39.67µs | 30 |
-| external-message-conversion › core: external message tool results › 1000 matches | 342.54µs | +0.1% | +22.2% ⚠︎ | 274.56µs | 404.10µs | 30 |
-| external-message-conversion › core: external message tool results › 5000 matches | 1.833ms | -1.5% | +20.9% ⚠︎ | 1.516ms | 2.169ms | 30 |
-| external-message-conversion › core: external message unique tool calls › 100 matches | 20.28µs | -0.6% | +13.1% ⚠︎ | 18.01µs | 23.98µs | 30 |
-| external-message-conversion › core: external message unique tool calls › 1000 matches | 198.80µs | +0.7% | +13.7% ⚠︎ | 174.51µs | 230.06µs | 30 |
-| external-message-conversion › core: external message unique tool calls › 5000 matches | 1.076ms | -0.9% | +10.3% ⚠︎ | 983.29µs | 1.304ms | 30 |
-| from-thread-message-like › core: fromThreadMessageLike text parts › 1 text parts | 0.10µs | -0.2% | +4.9% | 0.10µs | 0.12µs | 30 |
-| from-thread-message-like › core: fromThreadMessageLike text parts › 10 text parts | 0.20µs | +2.8% | +14.2% ⚠︎ | 0.17µs | 0.22µs | 30 |
-| from-thread-message-like › core: fromThreadMessageLike text parts › 100 text parts | 1.20µs | +0.3% | +14.8% ⚠︎ | 0.99µs | 1.40µs | 30 |
-| from-thread-message-like › core: fromThreadMessageLike tool calls › 1 tool calls | 0.36µs | -0.8% | +8.7% | 0.30µs | 0.41µs | 30 |
-| from-thread-message-like › core: fromThreadMessageLike tool calls › 10 tool calls | 1.74µs | -1.5% | +5.8% | 1.58µs | 2.10µs | 30 |
-| from-thread-message-like › core: fromThreadMessageLike tool calls › 100 tool calls | 15.54µs | -1.9% | +6.9% | 14.02µs | 19.26µs | 30 |
-| interactable-array-patches › core: id-keyed interactable array patches › 1000 items and patches | 75.00µs | -1.8% | +2.5% | 70.58µs | 86.70µs | 30 |
-| interactable-array-patches › core: id-keyed interactable array patches › 5000 items and patches | 479.46µs | +0.6% | +1.3% | 447.91µs | 596.48µs | 30 |
-| markdown-preprocess › react-markdown: preprocess › escapeCurrencyDollars, 20,000 tilde runs on one line | 1.152ms |  |  | 1.152ms | 1.495ms | 2 |
-| markdown-preprocess › react-markdown: preprocess › escapeCurrencyDollars, 20,000 tildes after prose | 98.22µs |  |  | 98.22µs | 98.22µs | 1 |
-| markdown-preprocess › react-markdown: preprocess › escapeCurrencyDollars, 20,000 triple-backtick spans on one line | 1.473ms |  |  | 1.450ms | 1.473ms | 2 |
-| markdown-preprocess › react-markdown: preprocess › escapeCurrencyDollars, 5,000 code spans in one paragraph | 216.72µs |  |  | 216.72µs | 221.93µs | 2 |
-| markdown-preprocess › react-markdown: preprocess › escapeCurrencyDollars, mixed message, 100 sections | 319.17µs |  |  | 295.45µs | 319.17µs | 2 |
-| markdown-preprocess › react-markdown: preprocess › normalizeMathDelimiters, 20,000 tilde runs on one line | 3.030ms |  |  | 3.030ms | 3.257ms | 2 |
-| markdown-preprocess › react-markdown: preprocess › normalizeMathDelimiters, 20,000 tildes after prose | 464.11µs |  |  | 464.11µs | 464.11µs | 1 |
-| markdown-preprocess › react-markdown: preprocess › normalizeMathDelimiters, 20,000 triple-backtick spans on one line | 9.408ms |  |  | 9.408ms | 9.665ms | 2 |
-| markdown-preprocess › react-markdown: preprocess › normalizeMathDelimiters, 5,000 code spans in one paragraph | 1.534ms |  |  | 1.534ms | 1.541ms | 2 |
-| markdown-preprocess › react-markdown: preprocess › normalizeMathDelimiters, mixed message, 100 sections | 1.134ms |  |  | 1.048ms | 1.134ms | 2 |
-| markdown-streaming › react-markdown: one token after an unchanged fenced code block › 10 KB fenced Markdown | 1.048ms |  |  | 1.018ms | 1.222ms | 7 |
-| markdown-streaming › react-markdown: one token after an unchanged fenced code block › 10 KB fenced Markdown deferred | 1.443ms |  |  | 1.371ms | 1.499ms | 7 |
-| markdown-streaming › react-markdown: one token after an unchanged fenced code block › 100 KB fenced Markdown | 7.466ms |  |  | 7.336ms | 8.816ms | 7 |
-| markdown-streaming › react-markdown: one token after an unchanged fenced code block › 100 KB fenced Markdown deferred | 8.741ms |  |  | 8.670ms | 10.017ms | 7 |
-| markdown-streaming › react-markdown: one token changed in the last paragraph, by message length › 1 paragraphs | 618.25µs | +18.1% | +53.5% ⚠︎ | 371.23µs | 730.11µs | 30 |
-| markdown-streaming › react-markdown: one token changed in the last paragraph, by message length › 10 paragraphs | 1.089ms | +3.6% | +2.6% | 1.021ms | 1.222ms | 30 |
-| markdown-streaming › react-markdown: one token changed in the last paragraph, by message length › 50 paragraphs | 4.339ms | -0.2% | +8.1% | 4.007ms | 5.227ms | 30 |
-| markdown-streaming › react-markdown: the same token with defer on › 1 paragraphs deferred | 1.129ms | -0.2% | -0.2% | 1.095ms | 1.180ms | 30 |
-| markdown-streaming › react-markdown: the same token with defer on › 10 paragraphs deferred | 1.071ms | +1.8% | +1.1% | 1.041ms | 1.178ms | 30 |
-| markdown-streaming › react-markdown: the same token with defer on › 50 paragraphs deferred | 2.624ms | -2.9% | -3.8% | 2.210ms | 3.172ms | 30 |
-| react-langgraph › react-langgraph: streamed tool argument accumulation › 1000 character argument in 16-character deltas | 120.84µs | +20.6% |  | 100.23µs | 152.70µs | 8 |
-| react-langgraph › react-langgraph: streamed tool argument accumulation › 10000 character argument in 16-character deltas | 1.100ms | +16.5% |  | 944.27µs | 1.368ms | 8 |
-| react-langgraph › react-langgraph: streamed tool argument accumulation › 500 short object entries in 16-character deltas | 145.437ms | +25.5% |  | 115.889ms | 167.624ms | 8 |
-| react-langgraph › react-langgraph: streamed tool argument accumulation › 50000 character argument in 16-character deltas | 5.406ms | +14.8% |  | 4.707ms | 6.895ms | 8 |
-| react-pi-message-projection › react-pi: streaming tail projection › 10 stable messages | 1.04µs | +3.1% |  | 0.99µs | 1.19µs | 8 |
-| react-pi-message-projection › react-pi: streaming tail projection › 1000 stable messages | 6.13µs | +6.0% |  | 5.62µs | 6.13µs | 8 |
-| react-pi-message-projection › react-pi: streaming tail projection › 5000 stable messages | 22.77µs | +11.6% |  | 17.45µs | 22.77µs | 8 |
-| sse-fragmentation › assistant-stream: fragmented SSE events › 100 KiB, 1 chunks | 2.64µs | +1.0% | +3.6% | 2.51µs | 3.21µs | 30 |
-| sse-fragmentation › assistant-stream: fragmented SSE events › 100 KiB, 101 chunks | 11.74µs | +16.9% | +2.5% | 10.04µs | 13.96µs | 30 |
-| sse-fragmentation › assistant-stream: fragmented SSE events › 1024 KiB, 1 chunks | 25.31µs | -0.3% | -2.4% | 24.32µs | 30.73µs | 30 |
-| sse-fragmentation › assistant-stream: fragmented SSE events › 1024 KiB, 1025 chunks | 248.79µs | +5.3% | +20.7% ⚠︎ | 216.15µs | 287.79µs | 30 |
-| thread-scaling › external-store thread: mount+unmount by message count › 10 messages | 2.228ms | +15.8% | +40.8% ⚠︎ | 1.549ms | 2.615ms | 30 |
-| thread-scaling › external-store thread: mount+unmount by message count › 100 messages | 15.228ms | +20.9% | +29.4% ⚠︎ | 11.705ms | 16.358ms | 30 |
-| thread-scaling › external-store thread: mount+unmount by message count › 1000 messages | 235.169ms | +32.5% | +35.3% ⚠︎ | 150.737ms | 240.613ms | 30 |
-| thread-scaling › external-store thread: one token changed in the last message, by layer › 20 message window, 10 messages | 204.50µs | -0.4% |  | 197.56µs | 268.00µs | 12 |
-| thread-scaling › external-store thread: one token changed in the last message, by layer › 20 message window, 100 messages | 356.21µs | -2.8% |  | 327.73µs | 473.00µs | 12 |
-| thread-scaling › external-store thread: one token changed in the last message, by layer › 20 message window, 1000 messages | 1.655ms | +8.2% |  | 1.495ms | 2.207ms | 12 |
-| thread-scaling › external-store thread: one token changed in the last message, by layer › all messages by id, 10 messages | 215.07µs | -1.2% |  | 187.05µs | 283.34µs | 12 |
-| thread-scaling › external-store thread: one token changed in the last message, by layer › all messages by id, 100 messages | 629.90µs | -26.1% |  | 528.14µs | 976.95µs | 12 |
-| thread-scaling › external-store thread: one token changed in the last message, by layer › all messages by id, 1000 messages | 5.454ms | -45.1% |  | 4.475ms | 12.620ms | 12 |
-| thread-scaling › external-store thread: one token changed in the last message, by layer › all messages, 10 messages | 193.20µs | +1.3% |  | 171.55µs | 267.92µs | 12 |
-| thread-scaling › external-store thread: one token changed in the last message, by layer › all messages, 100 messages | 371.58µs | -41.1% |  | 371.58µs | 830.44µs | 12 |
-| thread-scaling › external-store thread: one token changed in the last message, by layer › all messages, 1000 messages | 3.317ms | -52.3% |  | 2.630ms | 10.511ms | 12 |
-| thread-scaling › external-store thread: one token changed in the last message, by layer › provider only, 10 messages | 95.45µs | -3.9% |  | 83.88µs | 111.41µs | 12 |
-| thread-scaling › external-store thread: one token changed in the last message, by layer › provider only, 100 messages | 201.38µs | -0.1% |  | 184.69µs | 235.11µs | 12 |
-| thread-scaling › external-store thread: one token changed in the last message, by layer › provider only, 1000 messages | 1.363ms | +3.8% |  | 1.226ms | 1.624ms | 12 |
-| thread-scaling › external-store thread: one token changed in the last message, by layer › runtime only, 10 messages | 6.99µs | +5.1% |  | 6.55µs | 7.89µs | 12 |
-| thread-scaling › external-store thread: one token changed in the last message, by layer › runtime only, 100 messages | 14.87µs | +2.3% |  | 14.21µs | 17.62µs | 12 |
-| thread-scaling › external-store thread: one token changed in the last message, by layer › runtime only, 1000 messages | 106.75µs | -0.9% |  | 102.78µs | 128.33µs | 12 |
-| thread-scaling › external-store thread: one token changed in the last message, by thread length › 10 messages | 183.07µs | -8.3% | -35.5% ⚠︎ | 168.27µs | 378.51µs | 30 |
-| thread-scaling › external-store thread: one token changed in the last message, by thread length › 100 messages | 387.16µs | -25.4% | -75.9% ⚠︎ | 374.00µs | 1.779ms | 30 |
-| thread-scaling › external-store thread: one token changed in the last message, by thread length › 1000 messages | 2.859ms | -56.9% | -94.2% ⚠︎ | 2.568ms | 54.890ms | 30 |
-| tool-args › assistant-stream: accumulator tool arguments (16-char deltas) › 1000 bytes | 140.34µs |  |  | 134.67µs | 165.76µs | 7 |
-| tool-args › assistant-stream: accumulator tool arguments (16-char deltas) › 10000 bytes | 1.270ms |  |  | 1.226ms | 1.471ms | 7 |
-| tool-args › assistant-stream: accumulator tool arguments (16-char deltas) › 5000 bytes | 649.49µs |  |  | 613.38µs | 745.85µs | 7 |
-| tool-args › assistant-stream: active-reader tool arguments (16-char deltas) › 1000 bytes | 236.27µs |  |  | 223.89µs | 273.39µs | 7 |
-| tool-args › assistant-stream: active-reader tool arguments (16-char deltas) › 10000 bytes | 2.058ms |  |  | 1.949ms | 2.357ms | 7 |
-| tool-args › assistant-stream: active-reader tool arguments (16-char deltas) › 5000 bytes | 1.044ms |  |  | 986.53µs | 1.202ms | 7 |
-| tool-args › assistant-stream: complete accumulated arguments (single delta) › 10,000 array elements | 143.49µs |  |  | 140.93µs | 166.92µs | 7 |
-| tool-args › assistant-stream: dense accumulated arguments (16-char deltas) › 2,000 array entries | 13.328ms |  |  | 12.360ms | 14.005ms | 7 |
-| tool-args › assistant-stream: dense accumulated arguments (16-char deltas) › 2,000 object entries | 327.129ms |  |  | 307.789ms | 360.804ms | 7 |
-| tool-args › assistant-stream: execute-only tool arguments (16-char deltas) › 1000 bytes | 211.13µs | +4.9% | +5.6% | 178.72µs | 242.44µs | 30 |
-| tool-args › assistant-stream: execute-only tool arguments (16-char deltas) › 10000 bytes | 1.770ms | +7.4% | +3.3% | 1.531ms | 2.003ms | 30 |
-| tool-args › assistant-stream: execute-only tool arguments (16-char deltas) › 5000 bytes | 894.98µs | +4.4% | +4.0% | 782.04µs | 1.028ms | 30 |
-| tree › tree mount+unmount, 500 leaves x 10 hooks › createTapRoot | 1.496ms | +1.1% | -8.8% | 1.470ms | 2.102ms | 30 |
-| tree › tree mount+unmount, 500 leaves x 10 hooks › createTapRootDeps | 1.491ms | -0.1% | -6.0% | 1.488ms | 2.023ms | 30 |
-| tree › tree mount+unmount, 500 leaves x 10 hooks › createTapRootStable | 1.433ms | -0.8% | -7.1% | 1.414ms | 1.970ms | 30 |
-| tree › tree mount+unmount, 500 leaves x 10 hooks › react | 1.437ms | +3.2% | +1.2% | 1.383ms | 1.733ms | 30 |
-| tree › tree mount+unmount, 500 leaves x 10 hooks › tapRoot | 887.87µs | +2.1% | -1.5% | 860.59µs | 1.091ms | 30 |
-| tree › tree update: one leaf dispatch, 500 leaves x 10 hooks › createTapRoot | 1.405ms | +1.7% | -2.2% | 1.337ms | 1.662ms | 30 |
-| tree › tree update: one leaf dispatch, 500 leaves x 10 hooks › createTapRootDeps | 1.366ms | -2.3% | -4.8% | 1.330ms | 1.608ms | 30 |
-| tree › tree update: one leaf dispatch, 500 leaves x 10 hooks › createTapRootStable | 124.47µs | +11.6% | -31.2% ⚠︎ | 111.55µs | 210.75µs | 30 |
-| tree › tree update: one leaf dispatch, 500 leaves x 10 hooks › react | 62.32µs | -0.3% | +2.4% | 60.09µs | 73.56µs | 30 |
-| tree › tree update: one leaf dispatch, 500 leaves x 10 hooks › tapRoot | 720.16µs | +0.5% | -5.0% | 693.26µs | 857.20µs | 30 |
-| useResources › useResources mount+unmount, 500 children x 10 hooks › deps | 741.74µs | +2.1% | +5.8% | 689.02µs | 876.92µs | 30 |
-| useResources › useResources mount+unmount, 500 children x 10 hooks › no-deps | 751.71µs | +0.3% | +8.5% | 693.81µs | 902.68µs | 30 |
-| useResources › useResources: one child dispatch, 500 children x 10 hooks › deps | 21.70µs | -37.1% | -39.3% ⚠︎ | 20.95µs | 43.78µs | 30 |
-| useResources › useResources: one child dispatch, 500 children x 10 hooks › no-deps | 21.98µs | -96.4% | -96.5% ⚠︎ | 21.26µs | 705.55µs | 30 |
-| useResources › useResources: rebuild elements array, 500 children x 10 hooks › deps | 34.38µs | +7.1% | +1.6% | 32.09µs | 40.22µs | 30 |
-| useResources › useResources: rebuild elements array, 500 children x 10 hooks › no-deps | 644.53µs | +5.3% | +8.4% | 596.12µs | 716.76µs | 30 |
+| accumulator › assistant-stream: raw controller enqueue overhead › 10,000 chunks from one source stream | 700.12µs | +11.1% | +11.1% ⚠︎ | 700.12µs | 700.12µs | 1 |
+| accumulator › assistant-stream: raw controller enqueue overhead › 10,000 controller.enqueue calls | 1.029ms | +44.9% | +44.9% ⚠︎ | 1.029ms | 1.029ms | 1 |
+| accumulator › assistant-stream: same 4000-char text, chunk size A/B › 16 deltas × 250 chars | 43.79µs | +25.4% | +25.4% ⚠︎ | 43.79µs | 43.79µs | 1 |
+| accumulator › assistant-stream: same 4000-char text, chunk size A/B › 250 deltas × 16 chars | 505.83µs | +30.9% | +30.9% ⚠︎ | 505.83µs | 505.83µs | 1 |
+| accumulator › assistant-stream: same 4000-char text, chunk size A/B › 4000 deltas × 1 char (per-token) | 7.790ms | +28.6% | +28.6% ⚠︎ | 7.790ms | 7.790ms | 1 |
+| accumulator › assistant-stream: stream + accumulator per-delta cost (16-char deltas) › 100 deltas | 211.73µs | +34.2% | +34.2% ⚠︎ | 211.73µs | 211.73µs | 1 |
+| accumulator › assistant-stream: stream + accumulator per-delta cost (16-char deltas) › 1000 deltas | 1.933ms | +34.3% | +34.3% ⚠︎ | 1.933ms | 1.933ms | 1 |
+| accumulator › assistant-stream: stream + accumulator per-delta cost (16-char deltas) › 4000 deltas | 7.807ms | +35.6% | +35.6% ⚠︎ | 7.807ms | 7.807ms | 1 |
+| accumulator › assistant-stream: stream round trip baseline, no accumulator › 100 deltas | 8.27µs | +22.2% | +22.2% ⚠︎ | 8.27µs | 8.27µs | 1 |
+| accumulator › assistant-stream: stream round trip baseline, no accumulator › 1000 deltas | 69.58µs | +27.1% | +27.1% ⚠︎ | 69.58µs | 69.58µs | 1 |
+| accumulator › assistant-stream: stream round trip baseline, no accumulator › 4000 deltas | 273.73µs | +27.2% | +27.2% ⚠︎ | 273.73µs | 273.73µs | 1 |
+| ai-sdk-system-metadata › ai-sdk: system-message metadata conversion through the runtime › 128 parts, distinct providers (stress) | 80.48µs |  |  | 80.48µs | 80.48µs | 1 |
+| ai-sdk-system-metadata › ai-sdk: system-message metadata conversion through the runtime › 16 parts, one repeated provider | 43.88µs |  |  | 43.88µs | 43.88µs | 1 |
+| ai-sdk-system-metadata › ai-sdk: system-message metadata conversion through the runtime › 2 parts, one repeated provider | 43.15µs |  |  | 43.15µs | 43.15µs | 1 |
+| ai-sdk-system-metadata › ai-sdk: system-message metadata conversion through the runtime › 512 parts, distinct providers (stress) | 256.59µs |  |  | 256.59µs | 256.59µs | 1 |
+| ai-sdk-toolkit › ai-sdk: convert fresh AISDKToolkit schemas › 10 static tools | 53.43µs | +51.1% | +51.1% ⚠︎ | 53.43µs | 53.43µs | 1 |
+| ai-sdk-toolkit › ai-sdk: convert fresh AISDKToolkit schemas › 100 static tools | 516.68µs | +49.3% | +49.3% ⚠︎ | 516.68µs | 516.68µs | 1 |
+| ai-sdk-toolkit › ai-sdk: reuse converted AISDKToolkit schemas › 10 static tools | 7.50µs | +62.0% | +62.0% ⚠︎ | 7.50µs | 7.50µs | 1 |
+| ai-sdk-toolkit › ai-sdk: reuse converted AISDKToolkit schemas › 100 static tools | 61.86µs | +60.1% | +60.1% ⚠︎ | 61.86µs | 61.86µs | 1 |
+| data-stream › assistant-stream: data stream decode (16-char deltas) › 100 deltas | 596.37µs | +11.1% | +11.1% ⚠︎ | 596.37µs | 596.37µs | 1 |
+| data-stream › assistant-stream: data stream decode (16-char deltas) › 1000 deltas | 5.047ms | +5.1% | +5.1% | 5.047ms | 5.047ms | 1 |
+| data-stream › assistant-stream: data stream decode (16-char deltas) › 4000 deltas | 20.030ms | +4.5% | +4.5% | 20.030ms | 20.030ms | 1 |
+| data-stream › assistant-stream: data stream decode + accumulate, one tool-call start per part › 100 parts | 2.886ms |  |  | 2.886ms | 2.886ms | 1 |
+| data-stream › assistant-stream: data stream decode + accumulate, one tool-call start per part › 2000 parts | 91.146ms |  |  | 91.146ms | 91.146ms | 1 |
+| data-stream › assistant-stream: data stream decode + accumulate, one tool-call start per part › 500 parts | 14.786ms |  |  | 14.786ms | 14.786ms | 1 |
+| data-stream › assistant-stream: data stream encode (16-char deltas) › 100 deltas | 285.57µs | -14.1% | -14.1% ⚠︎ | 285.57µs | 285.57µs | 1 |
+| data-stream › assistant-stream: data stream encode (16-char deltas) › 1000 deltas | 2.785ms | -9.9% | -9.9% | 2.785ms | 2.785ms | 1 |
+| data-stream › assistant-stream: data stream encode (16-char deltas) › 4000 deltas | 11.123ms | -11.1% | -11.1% ⚠︎ | 11.123ms | 11.123ms | 1 |
+| external-message-conversion › core: cached external message conversion, one streaming delta › 1000 messages, 6-part replies | 214.74µs |  |  | 214.74µs | 214.74µs | 1 |
+| external-message-conversion › core: cached external message conversion, one streaming delta › 5000 messages, 20-part replies | 1.401ms |  |  | 1.401ms | 1.401ms | 1 |
+| external-message-conversion › core: external message reasoning continuations › 100 matches | 50.47µs | +79.9% | +79.9% ⚠︎ | 50.47µs | 50.47µs | 1 |
+| external-message-conversion › core: external message reasoning continuations › 1000 matches | 507.29µs | +63.1% | +63.1% ⚠︎ | 507.29µs | 507.29µs | 1 |
+| external-message-conversion › core: external message reasoning continuations › 5000 matches | 2.689ms | +61.9% | +61.9% ⚠︎ | 2.689ms | 2.689ms | 1 |
+| external-message-conversion › core: external message tool results › 100 matches | 59.39µs | +76.5% | +76.5% ⚠︎ | 59.39µs | 59.39µs | 1 |
+| external-message-conversion › core: external message tool results › 1000 matches | 600.71µs | +75.4% | +75.4% ⚠︎ | 600.71µs | 600.71µs | 1 |
+| external-message-conversion › core: external message tool results › 5000 matches | 3.145ms | +71.6% | +71.6% ⚠︎ | 3.145ms | 3.145ms | 1 |
+| external-message-conversion › core: external message unique tool calls › 100 matches | 31.40µs | +54.8% | +54.8% ⚠︎ | 31.40µs | 31.40µs | 1 |
+| external-message-conversion › core: external message unique tool calls › 1000 matches | 298.11µs | +50.0% | +50.0% ⚠︎ | 298.11µs | 298.11µs | 1 |
+| external-message-conversion › core: external message unique tool calls › 5000 matches | 1.621ms | +50.6% | +50.6% ⚠︎ | 1.621ms | 1.621ms | 1 |
+| from-thread-message-like › core: fromThreadMessageLike text parts › 1 text parts | 0.22µs | +109.4% | +109.4% ⚠︎ | 0.22µs | 0.22µs | 1 |
+| from-thread-message-like › core: fromThreadMessageLike text parts › 10 text parts | 0.36µs | +79.2% | +79.2% ⚠︎ | 0.36µs | 0.36µs | 1 |
+| from-thread-message-like › core: fromThreadMessageLike text parts › 100 text parts | 2.15µs | +78.3% | +78.3% ⚠︎ | 2.15µs | 2.15µs | 1 |
+| from-thread-message-like › core: fromThreadMessageLike tool calls › 1 tool calls | 0.49µs | +36.7% | +36.7% ⚠︎ | 0.49µs | 0.49µs | 1 |
+| from-thread-message-like › core: fromThreadMessageLike tool calls › 10 tool calls | 2.49µs | +43.1% | +43.1% ⚠︎ | 2.49µs | 2.49µs | 1 |
+| from-thread-message-like › core: fromThreadMessageLike tool calls › 100 tool calls | 22.78µs | +46.6% | +46.6% ⚠︎ | 22.78µs | 22.78µs | 1 |
+| interactable-array-patches › core: id-keyed interactable array patches › 1000 items and patches | 113.44µs | +51.3% | +51.3% ⚠︎ | 113.44µs | 113.44µs | 1 |
+| interactable-array-patches › core: id-keyed interactable array patches › 5000 items and patches | 593.59µs | +23.8% | +23.8% ⚠︎ | 593.59µs | 593.59µs | 1 |
+| markdown-preprocess › react-markdown: preprocess › escapeCurrencyDollars, 20,000 tilde runs on one line | 2.109ms | +83.0% | +83.0% ⚠︎ | 2.109ms | 2.109ms | 1 |
+| markdown-preprocess › react-markdown: preprocess › escapeCurrencyDollars, 20,000 tildes after prose | 161.09µs | +64.0% | +64.0% ⚠︎ | 161.09µs | 161.09µs | 1 |
+| markdown-preprocess › react-markdown: preprocess › escapeCurrencyDollars, 20,000 triple-backtick spans on one line | 2.750ms | +86.7% | +86.7% ⚠︎ | 2.750ms | 2.750ms | 1 |
+| markdown-preprocess › react-markdown: preprocess › escapeCurrencyDollars, 5,000 code spans in one paragraph | 389.52µs | +79.7% | +79.7% ⚠︎ | 389.52µs | 389.52µs | 1 |
+| markdown-preprocess › react-markdown: preprocess › escapeCurrencyDollars, mixed message, 100 sections | 505.50µs | +58.4% | +58.4% ⚠︎ | 505.50µs | 505.50µs | 1 |
+| markdown-preprocess › react-markdown: preprocess › normalizeMathDelimiters, 20,000 tilde runs on one line | 6.119ms | +102.0% | +102.0% ⚠︎ | 6.119ms | 6.119ms | 1 |
+| markdown-preprocess › react-markdown: preprocess › normalizeMathDelimiters, 20,000 tildes after prose | 765.77µs | +65.0% | +65.0% ⚠︎ | 765.77µs | 765.77µs | 1 |
+| markdown-preprocess › react-markdown: preprocess › normalizeMathDelimiters, 20,000 triple-backtick spans on one line | 16.219ms | +72.4% | +72.4% ⚠︎ | 16.219ms | 16.219ms | 1 |
+| markdown-preprocess › react-markdown: preprocess › normalizeMathDelimiters, 5,000 code spans in one paragraph | 2.746ms | +79.0% | +79.0% ⚠︎ | 2.746ms | 2.746ms | 1 |
+| markdown-preprocess › react-markdown: preprocess › normalizeMathDelimiters, mixed message, 100 sections | 1.933ms | +70.4% | +70.4% ⚠︎ | 1.933ms | 1.933ms | 1 |
+| markdown-streaming › react-markdown: one token after an unchanged fenced code block › 10 KB fenced Markdown | 2.321ms | +121.5% | +121.5% ⚠︎ | 2.321ms | 2.321ms | 1 |
+| markdown-streaming › react-markdown: one token after an unchanged fenced code block › 10 KB fenced Markdown deferred | 2.482ms | +72.0% | +72.0% ⚠︎ | 2.482ms | 2.482ms | 1 |
+| markdown-streaming › react-markdown: one token after an unchanged fenced code block › 100 KB fenced Markdown | 16.672ms | +123.3% | +123.3% ⚠︎ | 16.672ms | 16.672ms | 1 |
+| markdown-streaming › react-markdown: one token after an unchanged fenced code block › 100 KB fenced Markdown deferred | 17.870ms | +104.4% | +104.4% ⚠︎ | 17.870ms | 17.870ms | 1 |
+| markdown-streaming › react-markdown: one token changed in the last paragraph, by message length › 1 paragraphs | 1.014ms | +64.0% | +64.0% ⚠︎ | 1.014ms | 1.014ms | 1 |
+| markdown-streaming › react-markdown: one token changed in the last paragraph, by message length › 10 paragraphs | 2.119ms | +94.5% | +94.5% ⚠︎ | 2.119ms | 2.119ms | 1 |
+| markdown-streaming › react-markdown: one token changed in the last paragraph, by message length › 50 paragraphs | 7.448ms | +71.7% | +71.7% ⚠︎ | 7.448ms | 7.448ms | 1 |
+| markdown-streaming › react-markdown: the same token with defer on › 1 paragraphs deferred | 1.295ms | +14.7% | +14.7% ⚠︎ | 1.295ms | 1.295ms | 1 |
+| markdown-streaming › react-markdown: the same token with defer on › 10 paragraphs deferred | 1.460ms | +36.3% | +36.3% ⚠︎ | 1.460ms | 1.460ms | 1 |
+| markdown-streaming › react-markdown: the same token with defer on › 50 paragraphs deferred | 4.122ms | +57.1% | +57.1% ⚠︎ | 4.122ms | 4.122ms | 1 |
+| react-langgraph › react-langgraph: streamed tool argument accumulation › 1000 character argument in 16-character deltas | 258.66µs | +114.0% | +114.0% ⚠︎ | 258.66µs | 258.66µs | 1 |
+| react-langgraph › react-langgraph: streamed tool argument accumulation › 10000 character argument in 16-character deltas | 2.150ms | +95.5% | +95.5% ⚠︎ | 2.150ms | 2.150ms | 1 |
+| react-langgraph › react-langgraph: streamed tool argument accumulation › 500 short object entries in 16-character deltas | 211.596ms | +45.5% | +45.5% ⚠︎ | 211.596ms | 211.596ms | 1 |
+| react-langgraph › react-langgraph: streamed tool argument accumulation › 50000 character argument in 16-character deltas | 10.712ms | +98.2% | +98.2% ⚠︎ | 10.712ms | 10.712ms | 1 |
+| react-pi-message-projection › react-pi: streaming tail projection › 10 stable messages | 1.83µs | +76.5% | +76.5% ⚠︎ | 1.83µs | 1.83µs | 1 |
+| react-pi-message-projection › react-pi: streaming tail projection › 1000 stable messages | 9.28µs | +51.5% | +51.5% ⚠︎ | 9.28µs | 9.28µs | 1 |
+| react-pi-message-projection › react-pi: streaming tail projection › 5000 stable messages | 35.94µs | +57.9% | +57.9% ⚠︎ | 35.94µs | 35.94µs | 1 |
+| sse-fragmentation › assistant-stream: fragmented SSE events › 100 KiB, 1 chunks | 5.57µs | +110.8% | +110.8% ⚠︎ | 5.57µs | 5.57µs | 1 |
+| sse-fragmentation › assistant-stream: fragmented SSE events › 100 KiB, 101 chunks | 18.44µs | +57.1% | +57.1% ⚠︎ | 18.44µs | 18.44µs | 1 |
+| sse-fragmentation › assistant-stream: fragmented SSE events › 1024 KiB, 1 chunks | 54.67µs | +115.9% | +115.9% ⚠︎ | 54.67µs | 54.67µs | 1 |
+| sse-fragmentation › assistant-stream: fragmented SSE events › 1024 KiB, 1025 chunks | 245.37µs | -1.4% | -1.4% | 245.37µs | 245.37µs | 1 |
+| thread-scaling › external-store thread: mount+unmount by message count › 10 messages | 4.648ms | +108.6% | +108.6% ⚠︎ | 4.648ms | 4.648ms | 1 |
+| thread-scaling › external-store thread: mount+unmount by message count › 100 messages | 31.278ms | +105.4% | +105.4% ⚠︎ | 31.278ms | 31.278ms | 1 |
+| thread-scaling › external-store thread: mount+unmount by message count › 1000 messages | 389.725ms | +65.7% | +65.7% ⚠︎ | 389.725ms | 389.725ms | 1 |
+| thread-scaling › external-store thread: one token changed in the last message, by layer › 20 message window, 10 messages | 445.26µs | +117.7% | +117.7% ⚠︎ | 445.26µs | 445.26µs | 1 |
+| thread-scaling › external-store thread: one token changed in the last message, by layer › 20 message window, 100 messages | 698.02µs | +96.0% | +96.0% ⚠︎ | 698.02µs | 698.02µs | 1 |
+| thread-scaling › external-store thread: one token changed in the last message, by layer › 20 message window, 1000 messages | 3.370ms | +103.6% | +103.6% ⚠︎ | 3.370ms | 3.370ms | 1 |
+| thread-scaling › external-store thread: one token changed in the last message, by layer › all messages by id, 10 messages | 450.97µs | +109.7% | +109.7% ⚠︎ | 450.97µs | 450.97µs | 1 |
+| thread-scaling › external-store thread: one token changed in the last message, by layer › all messages by id, 100 messages | 1.130ms | +79.3% | +79.3% ⚠︎ | 1.130ms | 1.130ms | 1 |
+| thread-scaling › external-store thread: one token changed in the last message, by layer › all messages by id, 1000 messages | 11.112ms | +103.8% | +103.8% ⚠︎ | 11.112ms | 11.112ms | 1 |
+| thread-scaling › external-store thread: one token changed in the last message, by layer › all messages, 10 messages | 400.82µs | +107.5% | +107.5% ⚠︎ | 400.82µs | 400.82µs | 1 |
+| thread-scaling › external-store thread: one token changed in the last message, by layer › all messages, 100 messages | 805.82µs | +116.9% | +116.9% ⚠︎ | 805.82µs | 805.82µs | 1 |
+| thread-scaling › external-store thread: one token changed in the last message, by layer › all messages, 1000 messages | 7.362ms | +121.9% | +121.9% ⚠︎ | 7.362ms | 7.362ms | 1 |
+| thread-scaling › external-store thread: one token changed in the last message, by layer › provider only, 10 messages | 263.16µs | +175.7% | +175.7% ⚠︎ | 263.16µs | 263.16µs | 1 |
+| thread-scaling › external-store thread: one token changed in the last message, by layer › provider only, 100 messages | 389.75µs | +93.5% | +93.5% ⚠︎ | 389.75µs | 389.75µs | 1 |
+| thread-scaling › external-store thread: one token changed in the last message, by layer › provider only, 1000 messages | 2.324ms | +70.5% | +70.5% ⚠︎ | 2.324ms | 2.324ms | 1 |
+| thread-scaling › external-store thread: one token changed in the last message, by layer › runtime only, 10 messages | 13.27µs | +89.8% | +89.8% ⚠︎ | 13.27µs | 13.27µs | 1 |
+| thread-scaling › external-store thread: one token changed in the last message, by layer › runtime only, 100 messages | 27.59µs | +85.6% | +85.6% ⚠︎ | 27.59µs | 27.59µs | 1 |
+| thread-scaling › external-store thread: one token changed in the last message, by layer › runtime only, 1000 messages | 205.05µs | +92.1% | +92.1% ⚠︎ | 205.05µs | 205.05µs | 1 |
+| thread-scaling › external-store thread: one token changed in the last message, by thread length › 10 messages | 450.76µs | +146.2% | +146.2% ⚠︎ | 450.76µs | 450.76µs | 1 |
+| thread-scaling › external-store thread: one token changed in the last message, by thread length › 100 messages | 812.00µs | +109.7% | +109.7% ⚠︎ | 812.00µs | 812.00µs | 1 |
+| thread-scaling › external-store thread: one token changed in the last message, by thread length › 1000 messages | 6.341ms | +121.8% | +121.8% ⚠︎ | 6.341ms | 6.341ms | 1 |
+| tool-args › assistant-stream: accumulator tool arguments (16-char deltas) › 1000 bytes | 198.90µs | +41.7% | +41.7% ⚠︎ | 198.90µs | 198.90µs | 1 |
+| tool-args › assistant-stream: accumulator tool arguments (16-char deltas) › 10000 bytes | 1.767ms | +39.1% | +39.1% ⚠︎ | 1.767ms | 1.767ms | 1 |
+| tool-args › assistant-stream: accumulator tool arguments (16-char deltas) › 5000 bytes | 884.10µs | +36.1% | +36.1% ⚠︎ | 884.10µs | 884.10µs | 1 |
+| tool-args › assistant-stream: active-reader tool arguments (16-char deltas) › 1000 bytes | 242.54µs | +2.7% | +2.7% | 242.54µs | 242.54µs | 1 |
+| tool-args › assistant-stream: active-reader tool arguments (16-char deltas) › 10000 bytes | 2.140ms | +4.0% | +4.0% | 2.140ms | 2.140ms | 1 |
+| tool-args › assistant-stream: active-reader tool arguments (16-char deltas) › 5000 bytes | 1.078ms | +3.3% | +3.3% | 1.078ms | 1.078ms | 1 |
+| tool-args › assistant-stream: complete accumulated arguments (single delta) › 10,000 array elements | 266.94µs | +86.0% | +86.0% ⚠︎ | 266.94µs | 266.94µs | 1 |
+| tool-args › assistant-stream: dense accumulated arguments (16-char deltas) › 2,000 array entries | 20.581ms | +54.4% | +54.4% ⚠︎ | 20.581ms | 20.581ms | 1 |
+| tool-args › assistant-stream: dense accumulated arguments (16-char deltas) › 2,000 object entries | 472.059ms | +44.3% | +44.3% ⚠︎ | 472.059ms | 472.059ms | 1 |
+| tool-args › assistant-stream: execute-only tool arguments (16-char deltas) › 1000 bytes | 187.75µs | -11.1% | -11.1% ⚠︎ | 187.75µs | 187.75µs | 1 |
+| tool-args › assistant-stream: execute-only tool arguments (16-char deltas) › 10000 bytes | 1.552ms | -12.3% | -12.3% ⚠︎ | 1.552ms | 1.552ms | 1 |
+| tool-args › assistant-stream: execute-only tool arguments (16-char deltas) › 5000 bytes | 793.67µs | -11.3% | -11.3% ⚠︎ | 793.67µs | 793.67µs | 1 |
+| tool-args › assistant-stream: long string arguments (4096-char deltas) › accumulator: 10000 bytes | 162.92µs |  |  | 162.92µs | 162.92µs | 1 |
+| tool-args › assistant-stream: long string arguments (4096-char deltas) › accumulator: 50000 bytes | 740.00µs |  |  | 740.00µs | 740.00µs | 1 |
+| tool-args › assistant-stream: long string arguments (4096-char deltas) › active-reader: 10000 bytes | 177.32µs |  |  | 177.32µs | 177.32µs | 1 |
+| tool-args › assistant-stream: long string arguments (4096-char deltas) › active-reader: 50000 bytes | 789.57µs |  |  | 789.57µs | 789.57µs | 1 |
+| tree › tree mount+unmount, 500 leaves x 10 hooks › createTapRoot | 2.675ms | +78.8% | +78.8% ⚠︎ | 2.675ms | 2.675ms | 1 |
+| tree › tree mount+unmount, 500 leaves x 10 hooks › createTapRootDeps | 2.729ms | +83.1% | +83.1% ⚠︎ | 2.729ms | 2.729ms | 1 |
+| tree › tree mount+unmount, 500 leaves x 10 hooks › createTapRootStable | 2.642ms | +84.3% | +84.3% ⚠︎ | 2.642ms | 2.642ms | 1 |
+| tree › tree mount+unmount, 500 leaves x 10 hooks › react | 2.693ms | +87.4% | +87.4% ⚠︎ | 2.693ms | 2.693ms | 1 |
+| tree › tree mount+unmount, 500 leaves x 10 hooks › tapRoot | 1.750ms | +97.0% | +97.0% ⚠︎ | 1.750ms | 1.750ms | 1 |
+| tree › tree update: one leaf dispatch, 500 leaves x 10 hooks › createTapRoot | 2.539ms | +80.7% | +80.7% ⚠︎ | 2.539ms | 2.539ms | 1 |
+| tree › tree update: one leaf dispatch, 500 leaves x 10 hooks › createTapRootDeps | 2.550ms | +86.7% | +86.7% ⚠︎ | 2.550ms | 2.550ms | 1 |
+| tree › tree update: one leaf dispatch, 500 leaves x 10 hooks › createTapRootStable | 199.59µs | +60.4% | +60.4% ⚠︎ | 199.59µs | 199.59µs | 1 |
+| tree › tree update: one leaf dispatch, 500 leaves x 10 hooks › react | 106.93µs | +71.6% | +71.6% ⚠︎ | 106.93µs | 106.93µs | 1 |
+| tree › tree update: one leaf dispatch, 500 leaves x 10 hooks › tapRoot | 1.339ms | +86.0% | +86.0% ⚠︎ | 1.339ms | 1.339ms | 1 |
+| useResources › useResources mount+unmount, 500 children x 10 hooks › deps | 1.423ms | +91.9% | +91.9% ⚠︎ | 1.423ms | 1.423ms | 1 |
+| useResources › useResources mount+unmount, 500 children x 10 hooks › no-deps | 1.509ms | +100.7% | +100.7% ⚠︎ | 1.509ms | 1.509ms | 1 |
+| useResources › useResources: one child dispatch, 500 children x 10 hooks › deps | 37.94µs | +74.8% | +74.8% ⚠︎ | 37.94µs | 37.94µs | 1 |
+| useResources › useResources: one child dispatch, 500 children x 10 hooks › no-deps | 40.39µs | +83.8% | +83.8% ⚠︎ | 40.39µs | 40.39µs | 1 |
+| useResources › useResources: rebuild elements array, 500 children x 10 hooks › deps | 53.66µs | +56.1% | +56.1% ⚠︎ | 53.66µs | 53.66µs | 1 |
+| useResources › useResources: rebuild elements array, 500 children x 10 hooks › no-deps | 1.127ms | +74.9% | +74.9% ⚠︎ | 1.127ms | 1.127ms | 1 |
 
 informational; points come from different runners of the same class, so read trends, not single deltas.
